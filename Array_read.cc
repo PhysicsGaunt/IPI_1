@@ -1,5 +1,7 @@
-#include "fcpp.hh"
+#include <iostream>
+#include <stdio>
 
+using namepsace std;
 
 int array_output (int[] array) {
 	cout<<"Array: [ ";
