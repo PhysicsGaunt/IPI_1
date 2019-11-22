@@ -16,16 +16,18 @@ int main () {
 	int i = 0;
 	int input;
 	
-	cout<<"Geben Sie eine Zahl ein: ";
+	do {
+	cout<<"Geben Sie die "<<i<<". Zahl ein: ";
 	cin>>input;
 	
-	do {
 		if (i<10) {
 			if (input<-1) {cout<<"Nur positive Zahlen erlaubt!"; i=-100;};
 				else if (input==-1) {cout<<"Programm terminiert!"; i=-100;};
 				else if (input==0) {array_output(array);};
 				else {array[i]=input; i++;};
-			else if (i==10) {cout<<"Array ist voll!"}
+		};
+		else {cout<<"ARRAY IST VOLL!"; i=-100;};
+		if (i==9) {cout<<"Array ist voll!"};
 
 
 		for (int m=i; i>=0, m--) {
