@@ -27,7 +27,7 @@ int main () {
 				else {array[i]=input; i++;};
 		};
 		else {cout<<"ARRAY IST VOLL!"; i=-100;};
-		if (i==9) {cout<<"Array ist voll!"};
+		if (i==9) {cout<<"Array ist voll!";};
 
 
 		for (int m=i; i>=0, m--) {
