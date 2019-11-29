@@ -57,11 +57,11 @@ int main(int argc, char* argv[])
 		else 				push(zeichen);
 	}
 	
-	if (zeichen=="*") {
+	if (zeichen=="*" && arg[i-1]!="/" && arg[i+1]!="/") {
 		push(pop()*pop());
 	}
 	
-	if (zeichen=="/") {
+	if (zeichen=="/" && arg[i-1]!="*" && arg[i+1]!="*") {
 		push(pop()/pop());
 	}
 	
