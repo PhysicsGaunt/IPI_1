@@ -3,7 +3,7 @@
 
 // Definieren Sie hier Ihren Stack und legen Sie eine Instanz als globale
 // Variable an
-
+bool error = false;
 typedef int element_type;
 
 struct stack_struct{
@@ -22,6 +22,7 @@ void push(element_type e) {
 
 element_type pop() {
 	s.top--;
+	if (s.top<=0) {cout<<"Nicht genug Zahlen eingegeben!"; error=true;}
 	return s.stack[s.top];
 } 
 
@@ -72,8 +73,10 @@ int main(int argc, char* argv[])
 		push(pop()-pop());
 	}
 	
+	
     // Fuegen Sie hier Code ein, der das Zeichen verarbeitet, also Ziffern
     // zu Zahlen zusammenfÃ¼gt, Operatoren anwendet und andere Zeichen
     // ignoriert
+	  if (error==true) {return 0;}
   }
 }
