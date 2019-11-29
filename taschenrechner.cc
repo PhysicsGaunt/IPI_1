@@ -77,6 +77,8 @@ int main(int argc, char* argv[])
     // Fuegen Sie hier Code ein, der das Zeichen verarbeitet, also Ziffern
     // zu Zahlen zusammenfÃ¼gt, Operatoren anwendet und andere Zeichen
     // ignoriert
-	  if (error==true) {return 0;}
+	  if (error==true) {return 1;}
+	  cout<<"\nDie Lösung ist: "<<pop();
+	  return 0;
   }
 }
