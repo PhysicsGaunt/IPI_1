@@ -55,22 +55,27 @@ int main(int argc, char* argv[])
 		
 		if (zahl==true)		push(pop()*10+zeichen);
 		else 				push(zeichen);
+		zahl=true;
 	}
 	
 	if (zeichen*=="*" && arg[i-1]!="/" && arg[i+1]!="/") {
 		push(pop()*pop());
+		zahl=false;
 	}
 	
 	if (zeichen*=="/" && arg[i-1]!="*" && arg[i+1]!="*") {
-		push(pop()/pop());
+		push(1/pop()*pop());
+		zahl=false;
 	}
 	
 	if (zeichen*=="+") {
 		push(pop()+pop());
+		zahl=false;
 	}
 	
 	if (zeichen*=="-") {
-		push(pop()-pop());
+		push(-fabs(pop()-pop()));
+		zahl=false;
 	}
 	
 	
