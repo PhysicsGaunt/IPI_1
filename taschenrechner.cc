@@ -51,25 +51,25 @@ int main(int argc, char* argv[])
     // des entsprechenden Zeichens. Dieser stimmt im Falle der Zeichen '0'..'9'
     // nicht mit der entsprechenden Ziffer Ã¼berein.
     
-	if ((int)zeichen==0 || (int)zeichen==1 || (int)zeichen==2 || (int)zeichen==3 || (int)zeichen==4 || (int)zeichen==5 || (int)zeichen==6 || (int)zeichen==7 || (int)zeichen==8 || (int)zeichen==9) {
+	if ((int)zeichen==48 || (int)zeichen==49 || (int)zeichen==50 || (int)zeichen==51 || (int)zeichen==52 || (int)zeichen==53 || (int)zeichen==54 || (int)zeichen==55 || (int)zeichen==56 || (int)zeichen==57) {
 		
 		if (zahl==true)		push(pop()*10+zeichen);
 		else 				push(zeichen);
 	}
 	
-	if (zeichen=="*" && arg[i-1]!="/" && arg[i+1]!="/") {
+	if (zeichen*=="*" && arg[i-1]!="/" && arg[i+1]!="/") {
 		push(pop()*pop());
 	}
 	
-	if (zeichen=="/" && arg[i-1]!="*" && arg[i+1]!="*") {
+	if (zeichen*=="/" && arg[i-1]!="*" && arg[i+1]!="*") {
 		push(pop()/pop());
 	}
 	
-	if (zeichen=="+") {
+	if (zeichen*=="+") {
 		push(pop()+pop());
 	}
 	
-	if (zeichen=="-") {
+	if (zeichen*=="-") {
 		push(pop()-pop());
 	}
 	
