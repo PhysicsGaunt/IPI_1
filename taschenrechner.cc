@@ -6,7 +6,7 @@
 bool error = false;
 typedef int element_type;
 
-struct stack_struct{
+struct stack_struct{				//create stack
 	element_type stack[1000];
 	int top = 0;
 };
@@ -15,12 +15,12 @@ stack_struct s;
 // Danach koennen Sie die Funktionen push() und pop() implementieren, die auf dieser
 // globalen Variable operieren
 
-void push(element_type e) {
+void push(element_type e) {			//einfügen
 	s.stack[s.top] = e;
 	s.top++;
 }
 
-element_type pop() {
+element_type pop() {				//herausnehmen
 	s.top--;
 	if (s.top<=0) {cout<<"Nicht genug Zahlen eingegeben!"; error=true;}
 	return s.stack[s.top];
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
   // arg enthaelt die als Eingabe von der Kommandozeile uebergebene Zeichenfolge
   char* arg = argv[1];
 	
-	bool zahl = false;
+	bool zahl = false;			//war das letzte eine Zahl?
   // Schleife, die die Zeichen der Eingabe nacheinander ablaeuft
   // strlen gibt die Anzahl der Zeichen in der Zeichenkette
   for (int i = 0; i <= strlen(arg); i = i+1)
@@ -52,28 +52,28 @@ int main(int argc, char* argv[])
     // nicht mit der entsprechenden Ziffer Ã¼berein.
     
 	if ((int)zeichen==48 || (int)zeichen==49 || (int)zeichen==50 || (int)zeichen==51 || (int)zeichen==52 || (int)zeichen==53 || (int)zeichen==54 || (int)zeichen==55 || (int)zeichen==56 || (int)zeichen==57) {
-		
+									//zahlen eingabe
 		if (zahl==true)		push(pop()*10+zeichen);
 		else 				push(zeichen);
 		zahl=true;
 	}
 	
-	if (zeichen*=="*" && arg[i-1]!="/" && arg[i+1]!="/") {
+	if (zeichen*=="*" && arg[i-1]!="/" && arg[i+1]!="/") {		//multiplikation, ohne Kommentare
 		push(pop()*pop());
 		zahl=false;
 	}
 	
-	if (zeichen*=="/" && arg[i-1]!="*" && arg[i+1]!="*") {
+	if (zeichen*=="/" && arg[i-1]!="*" && arg[i+1]!="*") {		//Division, ohne Kommentare
 		push(1/pop()*pop());
 		zahl=false;
 	}
 	
-	if (zeichen*=="+") {
+	if (zeichen*=="+") {						//Addition
 		push(pop()+pop());
 		zahl=false;
 	}
 	
-	if (zeichen*=="-") {
+	if (zeichen*=="-") {						//Subtraktion
 		push(-fabs(pop()-pop()));
 		zahl=false;
 	}
@@ -82,8 +82,8 @@ int main(int argc, char* argv[])
     // Fuegen Sie hier Code ein, der das Zeichen verarbeitet, also Ziffern
     // zu Zahlen zusammenfÃ¼gt, Operatoren anwendet und andere Zeichen
     // ignoriert
-	  if (error==true) {return 1;}
-	  cout<<"\nDie Lösung ist: "<<pop();
-	  return 0;
   }
+  if (error==true) {return 1;}
+  cout<<"\nDie Lösung ist: "<<pop();
+  return 0;
 }
