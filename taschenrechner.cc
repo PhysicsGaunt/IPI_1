@@ -59,22 +59,22 @@ int main(int argc, char* argv[])
 		zahl=true;
 	}
 	
-	if (zeichen=='*' && arg[i-1]!='/' && arg[i+1]!='/') {		//multiplikation, ohne Kommentare
+	else if (zeichen=='*' && arg[i-1]!='/' && arg[i+1]!='/') {		//multiplikation, ohne Kommentare
 		push(pop()*pop());
 		zahl=false;
 	}
 	
-	if (zeichen=='/' && arg[i-1]!='*' && arg[i+1]!='*') {		//Division, ohne Kommentare
+	else if (zeichen=='/' && arg[i-1]!='*' && arg[i+1]!='*') {		//Division, ohne Kommentare
 		push(1/pop()*pop());
 		zahl=false;
 	}
 	
-	if (zeichen=='+') {						//Addition
+	else if (zeichen=='+') {						//Addition
 		push(pop()+pop());
 		zahl=false;
 	}
 	
-	if (zeichen=='-') {						//Subtraktion
+	else if (zeichen=='-') {						//Subtraktion
 		push(-fabs(pop()-pop()));
 		zahl=false;
 	}
