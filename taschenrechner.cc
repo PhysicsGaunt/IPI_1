@@ -1,6 +1,7 @@
 #include "fcpp.hh"
 #include <string.h> // fuer strlen, Laenge eines C-Strings
 
+using namespace std;
 // Definieren Sie hier Ihren Stack und legen Sie eine Instanz als globale
 // Variable an
 bool error = false;
@@ -22,7 +23,7 @@ void push(element_type e) {			//einfügen
 
 element_type pop() {				//herausnehmen
 	s.top--;
-	if (s.top<=0) {cout<<"Nicht genug Zahlen eingegeben!"; error=true;}
+	if (s.top<0) {cout<<"Nicht genug Zahlen eingegeben!\n"; error=true;}
 	return s.stack[s.top];
 } 
 
@@ -53,37 +54,37 @@ int main(int argc, char* argv[])
     
 	if ((int)zeichen==48 || (int)zeichen==49 || (int)zeichen==50 || (int)zeichen==51 || (int)zeichen==52 || (int)zeichen==53 || (int)zeichen==54 || (int)zeichen==55 || (int)zeichen==56 || (int)zeichen==57) {
 									//zahlen eingabe
-		if (zahl==true)		push(pop()*10+zeichen);
-		else 				push(zeichen);
+		if (zahl==true)		push(pop()*10+(int)zeichen-48);
+		else 				push((int)zeichen-48);
 		zahl=true;
 	}
 	
-	if (zeichen*=="*" && arg[i-1]!="/" && arg[i+1]!="/") {		//multiplikation, ohne Kommentare
+	if (zeichen=='*' && arg[i-1]!='/' && arg[i+1]!='/') {		//multiplikation, ohne Kommentare
 		push(pop()*pop());
 		zahl=false;
 	}
 	
-	if (zeichen*=="/" && arg[i-1]!="*" && arg[i+1]!="*") {		//Division, ohne Kommentare
+	if (zeichen=='/' && arg[i-1]!='*' && arg[i+1]!='*') {		//Division, ohne Kommentare
 		push(1/pop()*pop());
 		zahl=false;
 	}
 	
-	if (zeichen*=="+") {						//Addition
+	if (zeichen=='+') {						//Addition
 		push(pop()+pop());
 		zahl=false;
 	}
 	
-	if (zeichen*=="-") {						//Subtraktion
+	if (zeichen=='-') {						//Subtraktion
 		push(-fabs(pop()-pop()));
 		zahl=false;
 	}
 	
-	
+	else {zahl=false;}
     // Fuegen Sie hier Code ein, der das Zeichen verarbeitet, also Ziffern
     // zu Zahlen zusammenfÃ¼gt, Operatoren anwendet und andere Zeichen
     // ignoriert
   }
   if (error==true) {return 1;}
-  cout<<"\nDie Lösung ist: "<<pop();
+  cout<<"\nDie Lösung ist: "<<pop()<<endl;
   return 0;
 }
