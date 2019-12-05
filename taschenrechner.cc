@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 	}
 	
 	else if (zeichen=='-') {						//Subtraktion
-		push(-fabs(pop()-pop()));
+		push(-pop()+pop());
 		zahl=false;
 	}
 	
