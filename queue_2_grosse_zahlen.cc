@@ -66,7 +66,7 @@ int main() {
 	
 	for (int i=0; i<100000; i++) {
 		
-//	IntListElem* neu = new IntListElem;  // ENTKLAMMERN ZUM EINFÜGEN
+//	IntListElem* neu = new IntListElem;  // ENTKLAMMERN ZUM EINFÃœGEN
 //	neu->value=rand();
 //	insert_in_list (queue, neu);
 	
