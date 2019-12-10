@@ -20,14 +20,6 @@ struct IntList {
 };
 
 
-IntListElem* SLast_Elem (IntList* list) {
-
-	int i=1;
-	IntListElem* zaehler = list->first;
-	while (i<list->count-1) {zaehler=zaehler->next; i++;}
-	return zaehler;
-}
-
 void insert_in_list (IntList* list, IntListElem* ins) {
 
 	ins->next=list->first;
@@ -47,7 +39,7 @@ int extract_from_list (IntList* list) {
 	}
 	
 	
-	IntListElem* vorletztesElement = SLast_Elem(list);	
+	IntListElem* vorletztesElement = list->last->before;
 	int wert=vorletztesElement->next->value;
 	vorletztesElement->next = list->first;
 	list->last=vorletztesElement;
