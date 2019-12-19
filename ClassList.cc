@@ -45,9 +45,9 @@ class IntList {
 		IntList &operator=(IntList &list);
 
 	private:
+		struct IntListElem;
 		int count;
 		IntListElem* first;
-		struct IntListElem;
 };
 
 
