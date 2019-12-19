@@ -39,7 +39,7 @@ class IntList {
 		int getElement(int position);
 		
 		// Gibt Zeiger aus Element an der Position 'position' zurueck
-		IntList::IntListElem* ElemAtPos(int position);
+		IntListElem* ElemAtPos(int position);
 		
 		// Zuweisungsoperator '='
 		IntList &operator=(IntList &list);
@@ -217,7 +217,7 @@ int IntList::getElement(int position) {				// Wert an position 'position'
 }
 
 
-IntListElem* IntList::ElemAtPos(int position) {			// Zeiger auf position 'position'
+IntList::IntListElem* IntList::ElemAtPos(int position) {			// Zeiger auf position 'position'
 	
 	IntListElem* pos=this->first;
 	for (int i=0; i<position; i++) { pos=pos->next; }
