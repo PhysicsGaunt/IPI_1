@@ -5,12 +5,6 @@
 using namespace std;
 
 
-struct IntListElem {
-	IntListElem* next;
-	int value;
-};
-
-
 class IntList {
 	
 	public:
@@ -45,7 +39,7 @@ class IntList {
 		int getElement(int position);
 		
 		// Gibt Zeiger aus Element an der Position 'position' zurueck
-		IntListElem* ElemAtPos(int position);
+		IntList::IntListElem* ElemAtPos(int position);
 		
 		// Zuweisungsoperator '='
 		IntList &operator=(IntList &list);
@@ -53,6 +47,14 @@ class IntList {
 	private:
 		int count;
 		IntListElem* first;
+		struct IntListElem;
+};
+
+
+
+struct IntListElem {
+	IntListElem* next;
+	int value;
 };
 
 
