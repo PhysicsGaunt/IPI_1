@@ -9,7 +9,6 @@ int main() {
 
   string line;
   int i = 1;
-  bool schleife;
   
   ifstream fileIn( "Datei.txt" );
   fileIn.close();
@@ -23,7 +22,9 @@ int main() {
     fileIn.close();
     
     fileOut.open();
-    fileOut << line;
+    fileOut << i << ": " << line << endl;
     fileOut.close();
+    
+    i++;
     }
 }
