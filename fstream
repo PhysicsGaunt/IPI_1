@@ -1,7 +1,26 @@
 #include<stdlib.h>
 #include<iostream>
 #include<fstream>
+#include<string>
 
 using namespace std;
 
 int main() {
+
+  string line;
+  int i = 1;
+  
+  while(true) {
+   
+    stream.open( "Datei.txt" );
+    if( stream.good() == false ) { break; }
+    ifstream >> getline ( "Datei.txt", line );
+    stream.close();
+     
+    stream.open( "Datei-a.txt" );
+    ofstream << i << ": " << line << endl;
+    stream.close();
+    
+    i++;
+    }
+ }
