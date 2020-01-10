@@ -9,18 +9,21 @@ int main() {
 
   string line;
   int i = 1;
+  bool schleife;
   
-  while(true) {
-   
-    stream.open( "Datei.txt" );
-    if( stream.good() == false ) { break; }
-    ifstream >> getline ( "Datei.txt", line );
-    stream.close();
-     
-    stream.open( "Datei-a.txt" );
-    ofstream << i << ": " << line << endl;
-    stream.close();
+  ifstream fileIn( "Datei.txt" );
+  fileIn.close();
+  ofstream fileOut( "Datei-a.txt" );
+  fileOut.close()
+  
+  while(fileIn == true) {
     
-    i++;
+    fileIn.open();
+    getline( fileIn, line);
+    fileIn.close();
+    
+    fileOut.open();
+    fileOut << line;
+    fileOut.close();
     }
- }
+}
