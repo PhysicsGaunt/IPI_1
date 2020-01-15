@@ -1,30 +1,23 @@
-#include<stdlib.h>
-#include<iostream>
-#include<fstream>
-#include<string>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
-
-int main() {
-
-  string line;
-  int i = 1;
-  
-  ifstream fileIn( "Datei.txt" );
-  fileIn.close();
-  ofstream fileOut( "Datei-a.txt" );
-  fileOut.close()
-  
-  while(fileIn == true) {
-    
-    fileIn.open();
-    getline( fileIn, line);
-    fileIn.close();
-    
-    fileOut.open();
-    fileOut << i << ": " << line << endl;
-    fileOut.close();
-    
+int main () {
+  ifstream in;
+  ofstream out;
+  string name;
+  string temp;
+  cout<<"Dateiname ohne .txt: ";
+  cin >> name;
+  in.open(name+".txt");
+  out.open(name+"-a.txt");
+  int i=1;
+  while(getline(in.tmep)) {
+    out << to_string(i) << ": " << temp << endl;
     i++;
     }
+  in.close();
+  out.close();
+  return 0;
 }
