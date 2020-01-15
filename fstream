@@ -13,7 +13,7 @@ int main () {
   in.open(name+".txt");
   out.open(name+"-a.txt");
   int i=1;
-  while(getline(in.tmep)) {
+  while(getline(in, temp)) {
     out << to_string(i) << ": " << temp << endl;
     i++;
     }
